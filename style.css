@@ -67,7 +67,6 @@ header {
 
 .logo {
     height: 60px; /* Um tamanho seguro */
-    mix-blend-mode: screen; 
 }
 .nav-links {
     list-style: none;
