@@ -178,10 +178,12 @@ header {
     transform: translateY(-5px);
 }
 
-.thumb {
-    height: 200px;
+.card-projeto img {
     width: 100%;
-    /* Aqui, futuramente, você trocará o background-color por um background-image com os prints dos trabalhos */
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .info-projeto {
