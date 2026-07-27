@@ -65,11 +65,9 @@ header {
     align-items: center;
 }
 
-..logo {
-    height: 70px; 
+.logo {
+    height: 60px; /* Um tamanho seguro */
     mix-blend-mode: screen; 
-    transform: scale(2.5); /* Esse número dá um zoom de 2.5x na imagem */
-    transform-origin: left; /* Garante que ela cresça para a direita e não suma da tela */
 }
 .nav-links {
     list-style: none;
