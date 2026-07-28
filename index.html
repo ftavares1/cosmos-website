@@ -136,6 +136,26 @@
             <p>&copy; 2026 Cosmos Audiovisual. Todos os direitos reservados.</p>
         </div>
     </footer>
+<!-- EFEITOS DE ANIMAÇÃO (SCROLL REVEAL) -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        const sr = ScrollReveal({
+            origin: 'bottom', /* O elemento vem de baixo */
+            distance: '40px', /* Distância do movimento */
+            duration: 1000, /* Tempo da animação (1 segundo) */
+            delay: 150,
+            easing: 'ease', /* Movimento suave */
+            reset: false /* A animação acontece só na primeira vez que o usuário desce a tela */
+        });
 
+        // Aplicando a animação nos Títulos
+        sr.reveal('.section-title');
+        
+        // Aplicando nos cartões de Trabalhos (surgem um de cada vez)
+        sr.reveal('.card-projeto', { interval: 200 });
+        
+        // Aplicando nos cartões de Especialidades (surgem um de cada vez)
+        sr.reveal('.card-servico', { interval: 200 });
+    </script>
 </body>
 </html>
