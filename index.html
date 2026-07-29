@@ -4,298 +4,459 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmos Audiovisual | Edição e Color Grading</title>
+
+    <!-- Tipografia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte Inter do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- ESTILOS DA GALERIA VIMEO -->
-    <style>
-        .cosmos-video-gallery {
-            background-color: #0b0b0e;
-            padding: 80px 20px;
-            font-family: 'Inter', sans-serif;
-            color: #ffffff;
-        }
 
-        .gallery-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-        .video-grid-trio {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .video-card {
-            background: #121215;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .video-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 229, 255, 0.3); /* Ciano Cosmos */
-            box-shadow: 0 12px 30px rgba(0, 229, 255, 0.08);
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; 
-            background-color: #000;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .video-info {
-            padding: 24px;
-        }
-
-        .video-info h3 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin: 0 0 6px 0;
-            letter-spacing: 0.5px;
-        }
-
-        .video-info p {
-            font-size: 0.9rem;
-            color: #888890;
-            margin: 0;
-            font-weight: 400;
-        }
-
-        @media (max-width: 1024px) {
-            .video-grid-trio {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .video-card:nth-child(3) {
-                grid-column: span 2;
-                max-width: 50%;
-                margin: 0 auto;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .video-grid-trio {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .video-card:nth-child(3) {
-                grid-column: span 1;
-                max-width: 100%;
-            }
-        }
-    </style>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo-link">
-                <img src="logo-cosmos.svg" alt="Cosmos Audiovisual Logo" class="logo">
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ─── HEADER ─────────────────────────────────────────────────── -->
+<header id="header">
+    <div class="container header-inner">
+        <a href="#" class="logo-link">
+            <img src="logo-cosmos.svg" alt="Cosmos Audiovisual" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#showreel">Showreel</a></li>
+                <li><a href="#trabalhos">Trabalhos</a></li>
+                <li><a href="#servicos">Especialidades</a></li>
+                <li>
+                    <a href="https://wa.me/5543999189164?text=Ol%C3%A1,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!"
+                       target="_blank" class="nav-cta">
+                        Iniciar Projeto
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ─── HERO ───────────────────────────────────────────────────── -->
+<section class="hero" id="hero">
+    <div class="hero-ambient"></div>
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+        <div class="hero-eyebrow" id="hero-eyebrow">
+            Cosmos Audiovisual — Pós-Produção Premium
+        </div>
+
+        <h1 id="hero-title">
+            Elevando narrativas através da <span class="cyan-text">precisão visual</span>.
+        </h1>
+
+        <p class="hero-sub" id="hero-sub">
+            Especialistas em edição, pós-produção e color grading cinematográfico para marcas e criadores que não aceitam o ordinário.
+        </p>
+
+        <div class="hero-actions" id="hero-actions">
+            <a href="https://wa.me/5543999189164?text=Ol%C3%A1,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!"
+               target="_blank" class="btn-primary magnetic-btn">
+                Iniciar Projeto
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#showreel">Showreel</a></li>
-                    <li><a href="#trabalhos">Trabalhos</a></li>
-                    <li><a href="#servicos">Especialidades</a></li>
-                    <li><a href="https://wa.me/5543999189164?text=Olá,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!" target="_blank" class="btn-contato">Iniciar Projeto</a></li>
-                </ul>
-            </nav>
+            <a href="#showreel" class="btn-secondary">
+                Ver Portfólio
+            </a>
         </div>
-    </header>
+    </div>
 
-    <!-- HERO SECTION (Início) -->
-    <section class="hero">
-        <div class="container">
-            <h1>Elevando narrativas através da <span class="cyan-text">precisão visual</span>.</h1>
-            <p>Especialistas em edição, pós-produção e color grading cinematográfico para marcas e criadores.</p>
-            <a href="https://wa.me/5543999189164?text=Olá,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!" target="_blank" class="btn-primary">Iniciar Projeto</a>
+    <div class="scroll-indicator" id="scroll-indicator">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+<!-- ─── STATS ──────────────────────────────────────────────────── -->
+<div class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">50<span>+</span></div>
+                <div class="stat-label">Projetos entregues</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4<span>k</span></div>
+                <div class="stat-label">Qualidade de exportação</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3<span>+</span></div>
+                <div class="stat-label">Anos de experiência</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100<span>%</span></div>
+                <div class="stat-label">Clientes satisfeitos</div>
+            </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <!-- SHOWREEL (Nova Galeria Vimeo) -->
-    <section id="showreel" class="cosmos-video-gallery">
-        <div class="gallery-container">
-            <!-- Usa a mesma classe section-title que você já tinha configurada no seu style.css -->
-            <h2 class="section-title" style="text-align: center;">Portfólio em Movimento</h2>
-            
-            <div class="video-grid-trio">
-                <!-- Vídeo 1 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe src="https://player.vimeo.com/video/1213740971?h=0&title=0&byline=0&portrait=0" 
-                                frameborder="0" 
-                                allow="autoplay; fullscreen; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Color Grading Sony A7sII</h3>
-                        <p>Color Grading</p>
-                    </div>
+<!-- ─── VIDEO GALLERY ──────────────────────────────────────────── -->
+<section id="showreel" class="gallery-section">
+    <div class="container">
+        <div class="gallery-header">
+            <div class="section-label">Portfólio em Movimento</div>
+            <h2 class="section-title">Trabalho que fala por si</h2>
+        </div>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://player.vimeo.com/video/1213740971?h=0&title=0&byline=0&portrait=0"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
                 </div>
-
-                <!-- Vídeo 2 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe src="https://player.vimeo.com/video/1213741064?h=0&title=0&byline=0&portrait=0" 
-                                frameborder="0" 
-                                allow="autoplay; fullscreen; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Institucional Academia CT</h3>
-                        <p>Montagem, Edição & Color Grading</p>
-                    </div>
+                <div class="video-meta">
+                    <span class="video-tag">Color Grading</span>
+                    <h3>Color Grading Sony A7sII</h3>
                 </div>
+            </div>
 
-                <!-- Vídeo 3 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe src="https://player.vimeo.com/video/1213740897?h=0&title=0&byline=0&portrait=0" 
-                                frameborder="0" 
-                                allow="autoplay; fullscreen; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Color Grading ARRI</h3>
-                        <p>Revelação Log & Color Grading</p>
-                    </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://player.vimeo.com/video/1213741064?h=0&title=0&byline=0&portrait=0"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-meta">
+                    <span class="video-tag">Edição & Color</span>
+                    <h3>Institucional Academia CT</h3>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://player.vimeo.com/video/1213740897?h=0&title=0&byline=0&portrait=0"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-meta">
+                    <span class="video-tag">Log Reveal & Grading</span>
+                    <h3>Color Grading ARRI</h3>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- PORTFÓLIO / TRABALHOS (Imagens) -->
-    <section id="trabalhos" class="section dark-bg">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">Trabalhos Selecionados</h2>
-            <div class="grid-portfolio">
-                
-                <!-- Projeto 1 -->
-                <div class="card-projeto">
-                    <img src="trabalho1.png" alt="Capa do Projeto 1">
-                    <div class="info-projeto">
-                        <h3>Color Grading Para Youtube</h3>
-                        <p>Color Grading</p>
-                    </div>
+<!-- ─── PORTFOLIO ──────────────────────────────────────────────── -->
+<section id="trabalhos" class="portfolio-section">
+    <div class="container">
+        <div class="portfolio-header">
+            <div>
+                <div class="section-label">Trabalhos Selecionados</div>
+                <h2 class="section-title">Cada frame,<br>uma intenção.</h2>
+            </div>
+            <p class="section-subtitle">Projetos que atravessam a tela e criam conexões reais com o público.</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <img src="trabalho1.png" alt="Color Grading Para Youtube">
+                <div class="portfolio-info">
+                    <div class="portfolio-index">01 / Projeto</div>
+                    <h3>Color Grading Para Youtube</h3>
+                    <p>Color Grading</p>
                 </div>
+                <div class="portfolio-hover-line"></div>
+            </div>
 
-                <!-- Projeto 2 -->
-                <div class="card-projeto">
-                    <img src="trabalho2.png" alt="Capa do Projeto 2">
-                    <div class="info-projeto">
-                        <h3>Institucional Academia CT</h3>
-                        <p>Edição & Color</p>
-                    </div>
+            <div class="portfolio-card">
+                <img src="trabalho2.png" alt="Institucional Academia CT">
+                <div class="portfolio-info">
+                    <div class="portfolio-index">02 / Projeto</div>
+                    <h3>Institucional Academia CT</h3>
+                    <p>Edição & Color</p>
                 </div>
+                <div class="portfolio-hover-line"></div>
+            </div>
 
-                <!-- Projeto 3 -->
-                <div class="card-projeto">
-                    <img src="trabalho3.png" alt="Capa do Projeto 3">
-                    <div class="info-projeto">
-                        <h3>Montagem do Curta Astro Negro</h3>
-                        <p>Montagem, Edição & Color</p>
-                    </div>
+            <div class="portfolio-card">
+                <img src="trabalho3.png" alt="Curta Astro Negro">
+                <div class="portfolio-info">
+                    <div class="portfolio-index">03 / Projeto</div>
+                    <h3>Montagem do Curta Astro Negro</h3>
+                    <p>Montagem, Edição & Color</p>
                 </div>
-
+                <div class="portfolio-hover-line"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-   <!-- ESPECIALIDADES -->
-    <section id="servicos" class="section">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">Especialidades</h2>
-            
-            <div class="grid-servicos">
-                <div class="card-servico">
-                    <h3>Edição e Finalização</h3>
-                    <p>Montagem estrutural, cortes dinâmicos, transições fluidas e exportação do arquivo final com máxima qualidade técnica.</p>
+<!-- ─── ESPECIALIDADES ─────────────────────────────────────────── -->
+<section id="servicos" class="services-section">
+    <div class="container">
+        <div class="services-header">
+            <div class="section-label" style="justify-content:center;">Especialidades</div>
+            <h2 class="section-title">O que fazemos<br>de melhor</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <div class="service-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
+                    </svg>
                 </div>
-                <div class="card-servico">
-                    <h3>Color Grading</h3>
-                    <p>Correção primária de cor, correspondência entre câmeras e aplicação de estilização visual para uma estética de cinema.</p>
-                </div>
-                <div class="card-servico">
-                    <h3>Pós-Produção de Áudio</h3>
-                    <p>Limpeza de ruídos de voz, foley, sound design integrado às imagens e mixagem final imersiva.</p>
-                </div>
-                <div class="card-servico">
-                    <h3>Motion Graphics</h3>
-                    <p>Criação de animações de logo, terços inferiores e elementos gráficos perfeitamente integrados à narrativa do vídeo.</p>
-                </div>
+                <h3>Edição e Finalização</h3>
+                <p>Montagem estrutural, cortes dinâmicos, transições fluidas e exportação do arquivo final com máxima qualidade técnica.</p>
             </div>
-            
-        </div>
-    </section>
 
-    <!-- CONTATO -->
-    <section id="contato" class="section">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title">Vamos criar algo juntos?</h2>
-            <p style="margin-bottom: 30px; color: #a0a0a0;">Entre em contato para orçamentos e disponibilidade.</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
-                <!-- E-mail -->
-                <a href="mailto:contato.cosmosaudiovisual@gmail.com" style="color: #00e5ff; text-decoration: none; font-size: 1.1rem;">
-                    contato.cosmosaudiovisual@gmail.com
-                </a>
-                
-                <!-- WhatsApp -->
-                <a href="https://wa.me/5543999189164?text=Olá,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!" target="_blank" style="color: #00e5ff; text-decoration: none; font-size: 1.1rem;">
-                    WhatsApp: (43) 99918-9164
-                </a>
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <div class="service-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                </div>
+                <h3>Color Grading</h3>
+                <p>Correção primária de cor, correspondência entre câmeras e aplicação de estilização visual para uma estética de cinema.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <div class="service-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 18V5l12-2v13M9 9l12-2"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+                    </svg>
+                </div>
+                <h3>Pós-Produção de Áudio</h3>
+                <p>Limpeza de ruídos de voz, foley, sound design integrado às imagens e mixagem final imersiva.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <div class="service-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3>Motion Graphics</h3>
+                <p>Criação de animações de logo, terços inferiores e elementos gráficos perfeitamente integrados à narrativa do vídeo.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- RODAPÉ -->
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2026 Cosmos Audiovisual. Todos os direitos reservados.</p>
+<!-- ─── CONTACT ────────────────────────────────────────────────── -->
+<section id="contato" class="contact-section">
+    <div class="contact-bg-glow"></div>
+    <div class="container" style="position:relative;z-index:2;">
+        <div class="section-label" style="justify-content:center;">Contato</div>
+        <h2 class="section-title">Pronto para criar<br>algo extraordinário?</h2>
+        <p class="section-subtitle" style="text-align:center;margin:0 auto 0;">
+            Entre em contato para orçamentos e disponibilidade.
+        </p>
+
+        <div style="margin-top:48px;">
+            <a href="https://wa.me/5543999189164?text=Ol%C3%A1,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!"
+               target="_blank" class="btn-primary magnetic-btn" style="font-size:1rem;padding:18px 48px;">
+                Falar no WhatsApp
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
         </div>
-    </footer>
 
-    <!-- EFEITOS DE ANIMAÇÃO (SCROLL REVEAL) -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-        const sr = ScrollReveal({
-            origin: 'bottom', /* O elemento vem de baixo */
-            distance: '40px', /* Distância do movimento */
-            duration: 1000, /* Tempo da animação (1 segundo) */
-            delay: 150,
-            easing: 'ease', /* Movimento suave */
-            reset: false /* A animação acontece só na primeira vez que o usuário desce a tela */
+        <div class="contact-links">
+            <a href="mailto:contato.cosmosaudiovisual@gmail.com" class="contact-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 8l9 6 9-6M3 8v10a1 1 0 001 1h16a1 1 0 001-1V8M3 8a1 1 0 011-1h16a1 1 0 011 1"/>
+                </svg>
+                contato.cosmosaudiovisual@gmail.com
+            </a>
+            <a href="tel:+5543999189164" class="contact-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+                (43) 99918-9164
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+    <div class="container footer-inner">
+        <img src="logo-cosmos.svg" alt="Cosmos Audiovisual" class="footer-logo">
+        <p>&copy; 2026 Cosmos Audiovisual. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- ─── SCRIPTS ────────────────────────────────────────────────── -->
+<script>
+(function() {
+
+    // ── Lenis Smooth Scroll ──────────────────────────────────────
+    const lenis = new Lenis({
+        duration: 1.35,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true,
+    });
+
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+
+    // ── Header Scroll State ──────────────────────────────────────
+    const header = document.getElementById('header');
+    lenis.on('scroll', ({ scroll }) => {
+        header.classList.toggle('scrolled', scroll > 60);
+    });
+
+    // ── Custom Cursor ────────────────────────────────────────────
+    const cursor = document.getElementById('cursor');
+    const cursorRing = document.getElementById('cursorRing');
+    let cursorX = 0, cursorY = 0, ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+    });
+
+    (function animateCursor() {
+        ringX += (cursorX - ringX) * 0.12;
+        ringY += (cursorY - ringY) * 0.12;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top  = cursorY + 'px';
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top  = ringY + 'px';
+        requestAnimationFrame(animateCursor);
+    })();
+
+    document.querySelectorAll('a, button, .portfolio-card, .video-card, .service-card').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+
+    // ── Hero Text Reveal ─────────────────────────────────────────
+    const heroTitle = document.getElementById('hero-title');
+
+    function wrapWords(el) {
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+        const textNodes = [];
+        let node;
+        while ((node = walker.nextNode())) textNodes.push(node);
+
+        textNodes.forEach(textNode => {
+            const words = textNode.textContent.split(/(\s+)/);
+            const fragment = document.createDocumentFragment();
+            words.forEach(part => {
+                if (part.match(/^\s+$/)) {
+                    fragment.appendChild(document.createTextNode(part));
+                } else if (part.length > 0) {
+                    const wrap = document.createElement('span');
+                    wrap.className = 'word';
+                    const inner = document.createElement('span');
+                    inner.className = 'word-inner';
+                    inner.textContent = part;
+                    wrap.appendChild(inner);
+                    fragment.appendChild(wrap);
+                }
+            });
+            textNode.parentNode.replaceChild(fragment, textNode);
         });
+    }
 
-        // Aplicando a animação nos Títulos
-        sr.reveal('.section-title');
-        
-        // Aplicando nos cartões de Vídeo do Vimeo (Novo!)
-        sr.reveal('.video-card', { interval: 200 });
+    wrapWords(heroTitle);
 
-        // Aplicando nos cartões de Trabalhos de imagem (surgem um de cada vez)
-        sr.reveal('.card-projeto', { interval: 200 });
-        
-        // Aplicando nos cartões de Especialidades (surgem um de cada vez)
-        sr.reveal('.card-servico', { interval: 200 });
-    </script>
+    const tl = gsap.timeline({ delay: 0.2 });
+    tl.to('#hero-eyebrow',  { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' })
+      .to('.word-inner',    { y: '0%', opacity: 1, filter: 'blur(0px)', duration: 1.0, stagger: 0.045, ease: 'power4.out' }, '-=0.3')
+      .to('#hero-sub',      { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.5')
+      .to('#hero-actions',  { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.6')
+      .to('#scroll-indicator', { opacity: 1, duration: 0.8, ease: 'power2.out' }, '-=0.3');
+
+    // ── Hero Parallax ────────────────────────────────────────────
+    gsap.to('.hero-ambient', { yPercent: 25, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.5 } });
+    gsap.to('.hero-grid',    { yPercent: 15, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 2 } });
+
+    // ── Scroll-triggered Reveals ─────────────────────────────────
+    const reveals = [
+        { target: '.stat-item',      trigger: '.stats-section',  stagger: 0.12 },
+        { target: '.video-card',     trigger: '.video-grid',     stagger: 0.15 },
+        { target: '.portfolio-card', trigger: '.portfolio-grid', stagger: 0.13 },
+        { target: '.service-card',   trigger: '.services-grid',  stagger: 0.10 },
+    ];
+
+    reveals.forEach(({ target, trigger, stagger }) => {
+        gsap.to(target, {
+            opacity: 1, y: 0, duration: 0.85, stagger, ease: 'power3.out',
+            scrollTrigger: { trigger, start: 'top 80%' }
+        });
+    });
+
+    document.querySelectorAll('.section-title').forEach(el => {
+        if (el.closest('.hero')) return;
+        gsap.from(el, { opacity: 0, y: 30, duration: 0.9, ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 85%' } });
+    });
+
+    // ── Spotlight Mouse Tracking ─────────────────────────────────
+    ['.video-card', '.portfolio-card', '.service-card'].forEach(sel => {
+        document.querySelectorAll(sel).forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const r = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width  * 100) + '%');
+                card.style.setProperty('--mouse-y', ((e.clientY - r.top)  / r.height * 100) + '%');
+            });
+        });
+    });
+
+    // ── Magnetic Buttons ─────────────────────────────────────────
+    document.querySelectorAll('.magnetic-btn').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const r  = btn.getBoundingClientRect();
+            const dx = e.clientX - (r.left + r.width  / 2);
+            const dy = e.clientY - (r.top  + r.height / 2);
+            gsap.to(btn, { x: dx * 0.35, y: dy * 0.35, duration: 0.35, ease: 'power2.out' });
+        });
+        btn.addEventListener('mouseleave', () => {
+            gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+        });
+    });
+
+    // ── Smooth Anchor Scroll via Lenis ───────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            const href   = anchor.getAttribute('href');
+            const target = href !== '#' && document.querySelector(href);
+            if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -80, duration: 1.5 }); }
+        });
+    });
+
+})();
+</script>
 </body>
 </html>
