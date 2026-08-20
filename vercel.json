@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "source": "/feedback/((?!general).*)",
-  "destination": "/api/feedback/general"
+  "rewrites": [
+    {
+      "source": "/feedback/(?!general).*",
+      "destination": "/api/feedback/general"
+    }
+  ]
 }
