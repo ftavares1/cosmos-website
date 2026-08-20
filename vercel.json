@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/feedback/(?!general).*",
+      "source": "/feedback/((?!general).*)",
       "destination": "/api/feedback/general"
     }
   ]
