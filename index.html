@@ -1,476 +1,433 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmos Audiovisual | Edição e Color Grading</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmos Audiovisual | Edição, Color Grading & Motion Design</title>
+  <meta name="description" content="Uma experiência audiovisual. Edição, color grading e motion design cinematográfico para marcas que exigem o melhor.">
 
-    <!-- Tipografia -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
-    <!-- GSAP + ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-    <!-- Lenis Smooth Scroll -->
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-    <!-- ─── CARTÃO DO WHATSAPP E FAVICON ─── -->
-    <link rel="icon" href="favicon.png" type="image/png">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cosmos-website-six.vercel.app//">
-    <meta property="og:title" content="Cosmos Audiovisual | Edição e Color Grading">
-    <meta property="og:description" content="Especialistas em edição, pós-produção e color grading cinematográfico.">
-    <meta property="og:image" content="https://cosmos-website-six.vercel.app//og-image.jpg">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cosmos-website-six.vercel.app/">
+  <meta property="og:title" content="Cosmos Audiovisual | Edição, Color Grading & Motion Design">
+  <meta property="og:description" content="Uma experiência audiovisual. Edição, color grading e motion design cinematográfico.">
+  <meta property="og:image" content="https://cosmos-website-six.vercel.app/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
-<!-- Custom Cursor -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<div class="light-cursor" id="lightCursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
 
-<!-- ─── HEADER ─────────────────────────────────────────────────── -->
-<header id="header">
-    <div class="container header-inner">
-        <a href="#" class="logo-link">
-            <img src="logo-cosmos.svg" alt="Cosmos Audiovisual" class="logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#showreel">Showreel</a></li>
-                <li><a href="#trabalhos">Trabalhos</a></li>
-                <li><a href="#servicos">Especialidades</a></li>
-                <li>
-                    <a href="https://wa.me/5543999189164?text=Ol%C3%A1,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!"
-                       target="_blank" class="nav-cta">
-                        Iniciar Projeto
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<!-- ─── HERO ───────────────────────────────────────────────────── -->
-<section class="hero" id="hero">
-    <div class="hero-ambient"></div>
-    <div class="hero-grid"></div>
-
-    <div class="hero-content">
-        <div class="hero-eyebrow" id="hero-eyebrow">
-            Cosmos Audiovisual — Pós-Produção Premium
-        </div>
-
-        <h1 id="hero-title">
-            Elevando narrativas através da <span class="cyan-text">precisão visual</span>.
-        </h1>
-
-        <p class="hero-sub" id="hero-sub">
-            Especialistas em edição, pós-produção e color grading cinematográfico para marcas e criadores que não aceitam o ordinário.
-        </p>
-
-        <div class="hero-actions" id="hero-actions">
-            <a href="https://wa.me/5543999189164?text=Ol%C3%A1,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!"
-               target="_blank" class="btn-primary magnetic-btn">
-                Iniciar Projeto
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-            <a href="#showreel" class="btn-secondary">
-                Ver Portfólio
-            </a>
-        </div>
-    </div>
-
-    <div class="scroll-indicator" id="scroll-indicator">
-        <div class="scroll-line"></div>
-        <span>Scroll</span>
-    </div>
-</section>
-
-<!-- ─── STATS ──────────────────────────────────────────────────── -->
-<div class="stats-section">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">50<span>+</span></div>
-                <div class="stat-label">Projetos entregues</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">4<span>k</span></div>
-                <div class="stat-label">Qualidade de exportação</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">3<span>+</span></div>
-                <div class="stat-label">Anos de experiência</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100<span>%</span></div>
-                <div class="stat-label">Clientes satisfeitos</div>
-            </div>
-        </div>
-    </div>
+<!-- Mobile nav overlay -->
+<div class="nav-overlay" id="navOverlay">
+  <ul>
+    <li><a href="#reel" class="overlay-close">Reel</a></li>
+    <li><a href="#servicos" class="overlay-close">Especialidades</a></li>
+    <li><a href="#portfolio" class="overlay-close">Portfólio</a></li>
+    <li><a href="https://wa.me/5543999189164?text=Ol%C3%A1,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!" target="_blank" class="overlay-cta overlay-close">Iniciar Projeto</a></li>
+  </ul>
 </div>
 
-<!-- ─── VIDEO GALLERY ──────────────────────────────────────────── -->
-<section id="showreel" class="gallery-section">
-    <div class="container">
-        <div class="gallery-header">
-            <div class="section-label">Portfólio em Movimento</div>
-            <h2 class="section-title">Trabalho que fala por si</h2>
-        </div>
+<!-- Header — hidden at start, morphs in from Scene 00 -->
+<header id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="logo-link">
+      <img src="logo-cosmos.svg" alt="Cosmos Audiovisual">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#reel">Reel</a></li>
+        <li><a href="#servicos">Especialidades</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="https://wa.me/5543999189164?text=Ol%C3%A1,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!" target="_blank" class="nav-cta">Iniciar Projeto</a></li>
+      </ul>
+    </nav>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://player.vimeo.com/video/1213740971?h=0&title=0&byline=0&portrait=0"
-                            frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-meta">
-                    <span class="video-tag">Color Grading</span>
-                    <h3>Color Grading Sony A7sII</h3>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://player.vimeo.com/video/1213741064?h=0&title=0&byline=0&portrait=0"
-                            frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-meta">
-                    <span class="video-tag">Edição & Color</span>
-                    <h3>Institucional Academia CT</h3>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://player.vimeo.com/video/1213740897?h=0&title=0&byline=0&portrait=0"
-                            frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-meta">
-                    <span class="video-tag">Log Reveal & Grading</span>
-                    <h3>Color Grading ARRI</h3>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- ═══ CENA 00 — ABERTURA ═══ -->
+<section class="scene-opening" id="top">
+  <div class="opening-orbit" id="openingOrbit">
+    <div class="opening-orbit-dot"></div>
+  </div>
+  <div class="opening-wordmark">
+    <h1 id="opening-title">COSMOS</h1>
+    <div class="opening-sub">AUDIOVISUAL</div>
+  </div>
+  <div class="opening-scroll">
+    <div class="opening-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
 </section>
 
-<!-- ─── PORTFOLIO ──────────────────────────────────────────────── -->
-<section id="trabalhos" class="portfolio-section">
-    <div class="container">
-        <div class="portfolio-header">
-            <div>
-                <div class="section-label">Trabalhos Selecionados</div>
-                <h2 class="section-title">Cada frame,<br>uma intenção.</h2>
-            </div>
-            <p class="section-subtitle">Projetos que atravessam a tela e criam conexões reais com o público.</p>
-        </div>
-
-        <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <img src="trabalho1.png" alt="Color Grading Para Youtube">
-                <div class="portfolio-info">
-                    <div class="portfolio-index">01 / Projeto</div>
-                    <h3>Color Grading Para Youtube</h3>
-                    <p>Color Grading</p>
-                </div>
-                <div class="portfolio-hover-line"></div>
-            </div>
-
-            <div class="portfolio-card">
-                <img src="trabalho2.png" alt="Institucional Academia CT">
-                <div class="portfolio-info">
-                    <div class="portfolio-index">02 / Projeto</div>
-                    <h3>Institucional Academia CT</h3>
-                    <p>Edição & Color</p>
-                </div>
-                <div class="portfolio-hover-line"></div>
-            </div>
-
-            <div class="portfolio-card">
-                <img src="trabalho3.png" alt="Curta Astro Negro">
-                <div class="portfolio-info">
-                    <div class="portfolio-index">03 / Projeto</div>
-                    <h3>Montagem do Curta Astro Negro</h3>
-                    <p>Montagem, Edição & Color</p>
-                </div>
-                <div class="portfolio-hover-line"></div>
-            </div>
-        </div>
+<!-- ═══ CENA 01 — REEL (pinned crossfade) ═══ -->
+<section class="scene-reel" id="reel">
+  <div class="reel-pin">
+    <div class="reel-media">
+      <div class="reel-slide is-active" data-index="0">
+        <iframe src="https://player.vimeo.com/video/1213740971?h=0&background=1&autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+      <div class="reel-slide" data-index="1">
+        <iframe src="https://player.vimeo.com/video/1213741064?h=0&background=1&autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+      <div class="reel-slide" data-index="2">
+        <iframe src="https://player.vimeo.com/video/1213740897?h=0&background=1&autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+      <div class="reel-gradient"></div>
     </div>
+
+    <div class="reel-label">Portfólio<br>Em Movimento</div>
+
+    <div class="reel-content">
+      <div class="reel-index" id="reelIndex">01 / 03</div>
+      <h2 class="reel-title" id="reelTitle">Cada frame<br>é uma decisão.</h2>
+      <div class="reel-meta" id="reelMeta">Color Grading · Sony A7sII</div>
+    </div>
+
+    <div class="reel-progress" id="reelProgress">
+      <div class="reel-progress-dot is-active"></div>
+      <div class="reel-progress-dot"></div>
+      <div class="reel-progress-dot"></div>
+    </div>
+  </div>
 </section>
 
-<!-- ─── ESPECIALIDADES ─────────────────────────────────────────── -->
-<section id="servicos" class="services-section">
-    <div class="container">
-        <div class="services-header">
-            <div class="section-label" style="justify-content:center;">Especialidades</div>
-            <h2 class="section-title">O que fazemos<br>de melhor</h2>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-number">01</div>
-                <div class="service-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
-                    </svg>
-                </div>
-                <h3>Edição e Finalização</h3>
-                <p>Montagem estrutural, cortes dinâmicos, transições fluidas e exportação do arquivo final com máxima qualidade técnica.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-number">02</div>
-                <div class="service-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                    </svg>
-                </div>
-                <h3>Color Grading</h3>
-                <p>Correção primária de cor, correspondência entre câmeras e aplicação de estilização visual para uma estética de cinema.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-number">03</div>
-                <div class="service-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M9 18V5l12-2v13M9 9l12-2"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
-                    </svg>
-                </div>
-                <h3>Pós-Produção de Áudio</h3>
-                <p>Limpeza de ruídos de voz, foley, sound design integrado às imagens e mixagem final imersiva.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-number">04</div>
-                <div class="service-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
-                </div>
-                <h3>Motion Graphics</h3>
-                <p>Criação de animações de logo, terços inferiores e elementos gráficos perfeitamente integrados à narrativa do vídeo.</p>
-            </div>
-        </div>
+<!-- ═══ CENA 02 — MANIFESTO ═══ -->
+<section class="scene-manifesto">
+  <div class="manifesto-inner">
+    <div class="manifesto-image">
+      <img src="trabalho1.png" alt="">
     </div>
+    <div class="manifesto-text">
+      <h2>
+        <div class="manifesto-line c-silver"><span>Não editamos</span></div>
+        <div class="manifesto-line c-azure"><span>vídeos.</span></div>
+        <div class="manifesto-line c-silver"><span>Construímos</span></div>
+        <div class="manifesto-line c-mist"><span>percepção.</span></div>
+      </h2>
+      <p class="manifesto-body">
+        Cada corte, cada correção de cor, cada camada de áudio existe para uma razão: mudar como alguém sente uma marca em 30 segundos.
+      </p>
+    </div>
+  </div>
 </section>
 
-<!-- ─── CONTACT ────────────────────────────────────────────────── -->
-<section id="contato" class="contact-section">
-    <div class="contact-bg-glow"></div>
-    <div class="container" style="position:relative;z-index:2;">
-        <div class="section-label" style="justify-content:center;">Contato</div>
-        <h2 class="section-title">Pronto para criar<br>algo extraordinário?</h2>
-        <p class="section-subtitle" style="text-align:center;margin:0 auto 0;">
-            Entre em contato para orçamentos e disponibilidade.
-        </p>
+<!-- ═══ CENA 03 — ESPECIALIDADES (accordion) ═══ -->
+<section class="scene-services" id="servicos">
+  <div class="services-intro">
+    <div class="services-eyebrow">Especialidades</div>
+    <h2 class="services-heading">O que fazemos<br>de melhor.</h2>
+  </div>
 
-        <div style="margin-top:48px;">
-            <a href="https://wa.me/5543999189164?text=Ol%C3%A1,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!"
-               target="_blank" class="btn-primary magnetic-btn" style="font-size:1rem;padding:18px 48px;">
-                Falar no WhatsApp
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        </div>
-
-        <div class="contact-links">
-            <a href="mailto:contato.cosmosaudiovisual@gmail.com" class="contact-link">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M3 8l9 6 9-6M3 8v10a1 1 0 001 1h16a1 1 0 001-1V8M3 8a1 1 0 011-1h16a1 1 0 011 1"/>
-                </svg>
-                contato.cosmosaudiovisual@gmail.com
-            </a>
-            <a href="tel:+5543999189164" class="contact-link">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-                </svg>
-                (43) 99918-9164
-            </a>
-            <!-- Link do Instagram -->
-            <a href="https://instagram.com/cosmos.audiovisual/" target="_blank" class="contact-link">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-                @cosmos.audiovisual
-            </a>
-        </div>
+  <div class="service-row is-active" data-service="0">
+    <div class="service-row-bg"></div>
+    <div class="service-row-header">
+      <div class="service-num">01</div>
+      <div class="service-name">Edição & Finalização</div>
+      <div class="service-dash"></div>
     </div>
+    <div class="service-desc">Montagem estrutural, cortes dinâmicos, transições fluidas e exportação com máxima qualidade técnica.</div>
+  </div>
+
+  <div class="service-row" data-service="1">
+    <div class="service-row-bg"></div>
+    <div class="service-row-header">
+      <div class="service-num">02</div>
+      <div class="service-name">Color Grading</div>
+      <div class="service-dash"></div>
+    </div>
+    <div class="service-desc">Correção primária de cor, correspondência entre câmeras e estilização visual para uma estética de cinema.</div>
+  </div>
+
+  <div class="service-row" data-service="2">
+    <div class="service-row-bg"></div>
+    <div class="service-row-header">
+      <div class="service-num">03</div>
+      <div class="service-name">Pós-Produção de Áudio</div>
+      <div class="service-dash"></div>
+    </div>
+    <div class="service-desc">Limpeza de ruídos de voz, foley, sound design integrado às imagens e mixagem final imersiva.</div>
+  </div>
+
+  <div class="service-row" data-service="3">
+    <div class="service-row-bg"></div>
+    <div class="service-row-header">
+      <div class="service-num">04</div>
+      <div class="service-name">Motion Graphics</div>
+      <div class="service-dash"></div>
+    </div>
+    <div class="service-desc">Animações de logo, terços inferiores e elementos gráficos integrados à narrativa do vídeo.</div>
+  </div>
 </section>
 
-<!-- ─── FOOTER ─────────────────────────────────────────────────── -->
+<!-- ═══ CENA 04 — PORTFÓLIO (scroll → horizontal) ═══ -->
+<section class="scene-portfolio" id="portfolio">
+  <div class="portfolio-pin">
+    <div class="portfolio-header">
+      <div class="portfolio-eyebrow">Trabalhos Selecionados</div>
+      <h2 class="portfolio-heading">Cada frame, uma intenção.</h2>
+    </div>
+
+    <div class="portfolio-track" id="portfolioTrack">
+      <div class="portfolio-item">
+        <img src="trabalho1.png" alt="Color Grading Para Youtube">
+        <div class="portfolio-item-meta">
+          <div class="portfolio-item-num">01 / Color Grading</div>
+          <div class="portfolio-item-title">Color Grading Para Youtube</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="trabalho2.png" alt="Institucional Academia CT">
+        <div class="portfolio-item-meta">
+          <div class="portfolio-item-num">02 / Edição & Color</div>
+          <div class="portfolio-item-title">Institucional Academia CT</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="trabalho3.png" alt="Curta Astro Negro">
+        <div class="portfolio-item-meta">
+          <div class="portfolio-item-num">03 / Montagem, Edição & Color</div>
+          <div class="portfolio-item-title">Montagem do Curta Astro Negro</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-hint">Role para navegar pelos projetos →</div>
+  </div>
+</section>
+
+<!-- ═══ CENA 05 — FECHAMENTO / CTA ═══ -->
+<section class="scene-closing" id="contato">
+  <div class="closing-glow"></div>
+  <div style="position:relative; z-index:2;">
+    <div class="closing-dot"></div>
+    <h2 class="closing-title">Vamos criar<br>algo extraordinário.</h2>
+    <a href="https://wa.me/5543999189164?text=Ol%C3%A1,%20gostaria%20de%20falar%20sobre%20um%20projeto%20audiovisual!" target="_blank" class="closing-cta">
+      Falar no WhatsApp
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M1 7.5h13M7.5 1l6.5 6.5-6.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <div class="closing-links">
+      <a href="mailto:contato.cosmosaudiovisual@gmail.com">contato.cosmosaudiovisual@gmail.com</a>
+      <a href="tel:+5543999189164">(43) 99918-9164</a>
+      <a href="https://instagram.com/cosmos.audiovisual/" target="_blank">@cosmos.audiovisual</a>
+    </div>
+  </div>
+</section>
+
 <footer>
-    <div class="container footer-inner">
-        <img src="logo-cosmos.svg" alt="Cosmos Audiovisual" class="footer-logo">
-        <p>&copy; 2026 Cosmos Audiovisual. Todos os direitos reservados.</p>
-    </div>
+  <span>COSMOS AUDIOVISUAL</span>
+  <span>&copy; 2026 Todos os direitos reservados.</span>
 </footer>
 
-<!-- ─── SCRIPTS ────────────────────────────────────────────────── -->
 <script>
-(function() {
+(function () {
 
-    // ── Lenis Smooth Scroll ──────────────────────────────────────
-    const lenis = new Lenis({
-        duration: 1.35,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smooth: true,
-    });
+  // ── Lenis smooth scroll ────────────────────────────────────────
+  const lenis = new Lenis({ duration: 1.3, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+  function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
 
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
+  gsap.registerPlugin(ScrollTrigger);
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+  gsap.ticker.lagSmoothing(0);
 
-    gsap.registerPlugin(ScrollTrigger);
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-    gsap.ticker.lagSmoothing(0);
+  // ── Light cursor (follows mouse, acts as light source) ─────────
+  const lightCursor = document.getElementById('lightCursor');
+  const cursorDot   = document.getElementById('cursorDot');
+  let mx = window.innerWidth/2, my = window.innerHeight/2, lx = mx, ly = my;
 
-    // ── Header Scroll State ──────────────────────────────────────
-    const header = document.getElementById('header');
-    lenis.on('scroll', ({ scroll }) => {
-        header.classList.toggle('scrolled', scroll > 60);
-    });
+  document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+  (function loop() {
+    lx += (mx - lx) * 0.12; ly += (my - ly) * 0.12;
+    lightCursor.style.left = lx + 'px'; lightCursor.style.top = ly + 'px';
+    cursorDot.style.left = mx + 'px'; cursorDot.style.top = my + 'px';
+    requestAnimationFrame(loop);
+  })();
 
-    // ── Custom Cursor ────────────────────────────────────────────
-    const cursor = document.getElementById('cursor');
-    const cursorRing = document.getElementById('cursorRing');
-    let cursorX = 0, cursorY = 0, ringX = 0, ringY = 0;
+  document.querySelectorAll('a, button, .service-row, .portfolio-item').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
 
-    document.addEventListener('mousemove', (e) => {
-        cursorX = e.clientX;
-        cursorY = e.clientY;
-    });
+  // ── Mobile nav ──────────────────────────────────────────────────
+  const hamburger = document.getElementById('navHamburger');
+  const overlay = document.getElementById('navOverlay');
+  hamburger?.addEventListener('click', () => {
+    overlay.classList.toggle('open');
+    document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.overlay-close').forEach(el => el.addEventListener('click', () => {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
 
-    (function animateCursor() {
-        ringX += (cursorX - ringX) * 0.12;
-        ringY += (cursorY - ringY) * 0.12;
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top  = cursorY + 'px';
-        cursorRing.style.left = ringX + 'px';
-        cursorRing.style.top  = ringY + 'px';
-        requestAnimationFrame(animateCursor);
-    })();
+  // ═══════════════════════════════════════════════════════════════
+  // SCENE 00 — Opening wordmark morphs into fixed header
+  // ═══════════════════════════════════════════════════════════════
+  const header = document.getElementById('siteHeader');
 
-    document.querySelectorAll('a, button, .portfolio-card, .video-card, .service-card').forEach(el => {
-        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
+  gsap.timeline({
+    scrollTrigger: { trigger: '.scene-opening', start: 'top top', end: 'bottom top', scrub: 1 }
+  })
+  .to('#opening-title', { scale: 0.18, y: -430, ease: 'none' }, 0)
+  .to('.opening-sub', { opacity: 0, ease: 'none' }, 0)
+  .to('.opening-orbit', { scale: 0.25, opacity: 0, ease: 'none' }, 0)
+  .to('.opening-scroll', { opacity: 0, ease: 'none' }, 0);
 
-    // ── Hero Text Reveal ─────────────────────────────────────────
-    const heroTitle = document.getElementById('hero-title');
+  ScrollTrigger.create({
+    trigger: '.scene-opening',
+    start: 'bottom top+=100',
+    onEnter: () => header.classList.add('visible'),
+    onLeaveBack: () => header.classList.remove('visible'),
+  });
 
-    function wrapWords(el) {
-        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
-        const textNodes = [];
-        let node;
-        while ((node = walker.nextNode())) textNodes.push(node);
+  // Slow orbit rotation
+  gsap.to('#openingOrbit', { rotate: 360, duration: 40, repeat: -1, ease: 'none' });
 
-        textNodes.forEach(textNode => {
-            const words = textNode.textContent.split(/(\s+)/);
-            const fragment = document.createDocumentFragment();
-            words.forEach(part => {
-                if (part.match(/^\s+$/)) {
-                    fragment.appendChild(document.createTextNode(part));
-                } else if (part.length > 0) {
-                    const wrap = document.createElement('span');
-                    wrap.className = 'word';
-                    const inner = document.createElement('span');
-                    inner.className = 'word-inner';
-                    inner.textContent = part;
-                    wrap.appendChild(inner);
-                    fragment.appendChild(wrap);
-                }
-            });
-            textNode.parentNode.replaceChild(fragment, textNode);
-        });
+  // Entrance animation
+  gsap.timeline({ delay: 0.2 })
+    .from('#opening-title', { opacity: 0, y: 30, duration: 1.2, ease: 'power3.out' })
+    .from('.opening-sub', { opacity: 0, duration: 1, ease: 'power2.out' }, '-=0.6')
+    .from('.opening-orbit', { opacity: 0, scale: 0.8, duration: 1.4, ease: 'power2.out' }, '-=1')
+    .from('.opening-scroll', { opacity: 0, duration: 0.8 }, '-=0.4');
+
+  // ═══════════════════════════════════════════════════════════════
+  // SCENE 01 — Reel pinned crossfade
+  // ═══════════════════════════════════════════════════════════════
+  const reelData = [
+    { title: 'Cada frame<br>é uma decisão.', meta: 'Color Grading · Sony A7sII' },
+    { title: 'Ritmo que<br>conta histórias.', meta: 'Edição & Color · Institucional' },
+    { title: 'Luz e cor,<br>com intenção.', meta: 'Log Reveal · ARRI' },
+  ];
+
+  const reelSlides   = gsap.utils.toArray('.reel-slide');
+  const reelDots     = gsap.utils.toArray('.reel-progress-dot');
+  const reelTitleEl  = document.getElementById('reelTitle');
+  const reelMetaEl   = document.getElementById('reelMeta');
+  const reelIndexEl  = document.getElementById('reelIndex');
+  let currentReelIdx = 0;
+
+  function setReelSlide(idx) {
+    if (idx === currentReelIdx) return;
+    reelSlides[currentReelIdx].classList.remove('is-active');
+    reelSlides[idx].classList.add('is-active');
+    reelDots[currentReelIdx].classList.remove('is-active');
+    reelDots[idx].classList.add('is-active');
+    gsap.fromTo([reelTitleEl, reelMetaEl], { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.05 });
+    reelTitleEl.innerHTML = reelData[idx].title;
+    reelMetaEl.textContent = reelData[idx].meta;
+    reelIndexEl.textContent = `0${idx+1} / 03`;
+    currentReelIdx = idx;
+  }
+
+  ScrollTrigger.create({
+    trigger: '.scene-reel',
+    start: 'top top',
+    end: 'bottom bottom',
+    onUpdate: (self) => {
+      const idx = Math.min(2, Math.floor(self.progress * 3));
+      setReelSlide(idx);
     }
+  });
 
-    wrapWords(heroTitle);
+  // ═══════════════════════════════════════════════════════════════
+  // SCENE 02 — Manifesto text reveal (mask/clip reveal)
+  // ═══════════════════════════════════════════════════════════════
+  gsap.set('.manifesto-line span', { yPercent: 110 });
 
-    const tl = gsap.timeline({ delay: 0.2 });
-    tl.to('#hero-eyebrow',  { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' })
-      .to('.word-inner',    { y: '0%', opacity: 1, filter: 'blur(0px)', duration: 1.0, stagger: 0.045, ease: 'power4.out' }, '-=0.3')
-      .to('#hero-sub',      { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.5')
-      .to('#hero-actions',  { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.6')
-      .to('#scroll-indicator', { opacity: 1, duration: 0.8, ease: 'power2.out' }, '-=0.3');
+  gsap.timeline({
+    scrollTrigger: { trigger: '.scene-manifesto', start: 'top 70%' }
+  })
+  .to('.manifesto-line.c-silver:nth-of-type(1) span', { yPercent: 0, duration: 0.9, ease: 'power4.out' })
+  .to('.manifesto-line.c-azure span',                 { yPercent: 0, duration: 0.9, ease: 'power4.out' }, '-=0.65')
+  .to('.manifesto-line.c-silver:nth-of-type(3) span',  { yPercent: 0, duration: 0.9, ease: 'power4.out' }, '-=0.65')
+  .to('.manifesto-line.c-mist span',                  { yPercent: 0, duration: 0.9, ease: 'power4.out' }, '-=0.65')
+  .to('.manifesto-body', { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.5');
 
-    // ── Hero Parallax ────────────────────────────────────────────
-    gsap.to('.hero-ambient', { yPercent: 25, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.5 } });
-    gsap.to('.hero-grid',    { yPercent: 15, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 2 } });
+  gsap.to('.manifesto-image', {
+    yPercent: -8, ease: 'none',
+    scrollTrigger: { trigger: '.scene-manifesto', start: 'top bottom', end: 'bottom top', scrub: 1.5 }
+  });
 
-    // ── Scroll-triggered Reveals ─────────────────────────────────
-    const reveals = [
-        { target: '.stat-item',      trigger: '.stats-section',  stagger: 0.12 },
-        { target: '.video-card',     trigger: '.video-grid',     stagger: 0.15 },
-        { target: '.portfolio-card', trigger: '.portfolio-grid', stagger: 0.13 },
-        { target: '.service-card',   trigger: '.services-grid',  stagger: 0.10 },
-    ];
+  // ═══════════════════════════════════════════════════════════════
+  // SCENE 03 — Services accordion (scroll-driven active state)
+  // ═══════════════════════════════════════════════════════════════
+  const serviceRows = gsap.utils.toArray('.service-row');
 
-    reveals.forEach(({ target, trigger, stagger }) => {
-        gsap.to(target, {
-            opacity: 1, y: 0, duration: 0.85, stagger, ease: 'power3.out',
-            scrollTrigger: { trigger, start: 'top 80%' }
-        });
+  serviceRows.forEach((row, i) => {
+    ScrollTrigger.create({
+      trigger: row,
+      start: 'top 40%',
+      end: 'bottom 40%',
+      onEnter: () => setActiveService(i),
+      onEnterBack: () => setActiveService(i),
     });
 
-    document.querySelectorAll('.section-title').forEach(el => {
-        if (el.closest('.hero')) return;
-        gsap.from(el, { opacity: 0, y: 30, duration: 0.9, ease: 'power3.out',
-            scrollTrigger: { trigger: el, start: 'top 85%' } });
+    row.addEventListener('click', () => {
+      setActiveService(i);
+      lenis.scrollTo(row, { offset: -140, duration: 1 });
     });
+  });
 
-    // ── Spotlight Mouse Tracking ─────────────────────────────────
-    ['.video-card', '.portfolio-card', '.service-card'].forEach(sel => {
-        document.querySelectorAll(sel).forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const r = card.getBoundingClientRect();
-                card.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width  * 100) + '%');
-                card.style.setProperty('--mouse-y', ((e.clientY - r.top)  / r.height * 100) + '%');
-            });
-        });
-    });
+  function setActiveService(i) {
+    serviceRows.forEach((r, idx) => r.classList.toggle('is-active', idx === i));
+  }
 
-    // ── Magnetic Buttons ─────────────────────────────────────────
-    document.querySelectorAll('.magnetic-btn').forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            const r  = btn.getBoundingClientRect();
-            const dx = e.clientX - (r.left + r.width  / 2);
-            const dy = e.clientY - (r.top  + r.height / 2);
-            gsap.to(btn, { x: dx * 0.35, y: dy * 0.35, duration: 0.35, ease: 'power2.out' });
-        });
-        btn.addEventListener('mouseleave', () => {
-            gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
-        });
-    });
+  // ═══════════════════════════════════════════════════════════════
+  // SCENE 04 — Portfolio: vertical scroll → horizontal translateX
+  // ═══════════════════════════════════════════════════════════════
+  function initPortfolioScroll() {
+    const track = document.getElementById('portfolioTrack');
+    const pinSection = document.querySelector('.scene-portfolio');
 
-    // ── Smooth Anchor Scroll via Lenis ───────────────────────────
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-            const href   = anchor.getAttribute('href');
-            const target = href !== '#' && document.querySelector(href);
-            if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -80, duration: 1.5 }); }
-        });
+    ScrollTrigger.create({
+      trigger: pinSection,
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        const maxScroll = track.scrollWidth - window.innerWidth + 120;
+        gsap.set(track, { x: -maxScroll * self.progress });
+      }
     });
+  }
+
+  window.addEventListener('load', initPortfolioScroll);
+  // Fallback in case load already fired
+  if (document.readyState === 'complete') initPortfolioScroll();
+
+  // ═══════════════════════════════════════════════════════════════
+  // SCENE 05 — Closing reveal
+  // ═══════════════════════════════════════════════════════════════
+  gsap.from('.closing-dot, .closing-title, .closing-cta, .closing-links', {
+    opacity: 0, y: 24, duration: 0.9, stagger: 0.12, ease: 'power3.out',
+    scrollTrigger: { trigger: '.scene-closing', start: 'top 75%' }
+  });
+
+  // ── Smooth anchor scroll ────────────────────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      const target = href !== '#' && document.querySelector(href);
+      if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: 0, duration: 1.6 }); }
+    });
+  });
+
+  ScrollTrigger.refresh();
 
 })();
 </script>
